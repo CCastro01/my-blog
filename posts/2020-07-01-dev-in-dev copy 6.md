@@ -13,9 +13,32 @@ background: blue
 
 Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, [adipiscing](http://google.com) eu pulvinar vel, sodales vitae dui. :thumbsup: :smile: :sparkler:
 
-```javascript
-a=3
-puts a
+```jsx
+import React from 'react'
+import {graphql} from 'gatsby'
+import Layout from '../components/Layout'
+import * as S from '../components/Post/styled'
+
+const BlogPost = ({data}) => {
+    const post = data.markdownRemark
+
+    return(
+        <Layout>
+            <S.PostHeader>
+                <S.PostDate>
+                    {post.frontmatter.date} - {post.timeToRead}min de leitura
+                </S.PostDate>
+                <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
+                <S.PostDescription>{post.frontmatter.description}</S.PostDescription>
+            </S.PostHeader>
+
+            <S.MainContent>
+                <div dangerouslySetInnerHTML={{__html:post.html}}></div>
+            </S.MainContent>
+        </Layout>
+    )
+}
+
 ```
 
 ## Fusce a metus eu
