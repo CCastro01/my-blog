@@ -18,24 +18,24 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{
             __html: `
             (function() {
-              window.__onThemeChange = function() {};
-              function setTheme(newTheme) {
-                window.__theme = newTheme;
-                preferredTheme = newTheme;
-                document.body.className = newTheme;
-                window.__onThemeChange(newTheme);
+              window.__onDisplayChange = function() {};
+              function setDisplay(newDisplay) {
+                window.__display = newDisplay;
+                preferredDisplay = newDisplay;
+                document.body.id = newDisplay;
+                window.__onDisplayChange(newDisplay);
               }
-              var preferredTheme;
+              var preferredDisplay;
               try {
-                preferredTheme = localStorage.getItem('theme');
+                preferredDisplay = localStorage.getItem('display');
               } catch (err) { }
-              window.__setPreferredTheme = function(newTheme) {
-                setTheme(newTheme);
+              window.__setPreferredDisplay = function(newDisplay) {
+                setDisplay(newDisplay);
                 try {
-                  localStorage.setItem('theme', newTheme);
+                  localStorage.setItem('display', newDisplay);
                 } catch (err) {}
               }
-              setTheme(preferredTheme || 'dark');
+              setDisplay(preferredDisplay || 'list');
             })();
           `,
           }}
