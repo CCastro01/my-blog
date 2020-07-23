@@ -7,7 +7,7 @@ const Profile = () => {
   const {
     site: {
       siteMetadata: {
-        title, description, position
+        title, description, position, 
       }
     }
   } = useStaticQuery(
@@ -28,8 +28,9 @@ const Profile = () => {
     <S.ProfileWrapper>
       <S.ProfileLink>
         <Avatar />
-        <S.ProfileAuthor>{title}</S.ProfileAuthor>
+        <S.ProfileAuthor>{title}
         <S.ProfilePosition>{position}</S.ProfilePosition>
+        </S.ProfileAuthor>
       </S.ProfileLink>
       <S.ProfileDescription>{description}</S.ProfileDescription>
     </S.ProfileWrapper>
