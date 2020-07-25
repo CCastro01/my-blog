@@ -28,13 +28,22 @@ const MenuBar = () => {
         <S.MenuBarWrapper>
             <S.MenuBarGroup>
 
-                <S.MenuBarLink to="/" title="Voltar para Home">
+                <S.MenuBarLink to="/" to="/"
+                    cover="true"
+                    direction="right"
+                    duration={0.6}
+                    title="Voltar para Home">
                     <S.MenuBarItem>
                         <Home />
                     </S.MenuBarItem>
                 </S.MenuBarLink>
 
-                <S.MenuBarLink to="/search/" title="Pesquisar">
+                <S.MenuBarLink 
+                    to="/search/" 
+                    cover="true"
+                    direction="right"
+                    duration={0.6} 
+                    title="Pesquisar">
                     <S.MenuBarItem>
                         <Search />
                     </S.MenuBarItem>
