@@ -8,6 +8,7 @@ module.exports = {
     position: `Backend Developer`, 
     description: `A blog  about frontend development and other cool stuff.`,
     author: `@ccastro`,
+    siteUrl: `https://tecnorth.com.br`
   },
 
 

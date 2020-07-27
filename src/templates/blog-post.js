@@ -3,6 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import RecommendedPosts from '../components/RecommendedPosts'
 import Comments from "../components/Comments"
+import SEO from '../components/seo'
 
 import * as S from '../components/Post/styled'
 
@@ -14,6 +15,11 @@ const BlogPost = ({data , pageContext }) => {
 
     return(
         <Layout>
+            <SEO 
+                title={post.frontmatter.title} 
+                description={post.description}
+                image={post.frontmatter.image}
+            />
             <S.PostHeader>
                 <S.PostDate>
                     {post.frontmatter.date} - {post.timeToRead}min de leitura
@@ -41,6 +47,7 @@ const BlogPost = ({data , pageContext }) => {
                 title
                 description
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+                image
     }
 		html
         timeToRead
